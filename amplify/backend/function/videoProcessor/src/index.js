@@ -1,21 +1,29 @@
-/* Amplify Params - DO NOT EDIT
-	ENV
-	REGION
-	STORAGE_FIRSTWEBAPP_BUCKETNAME
-Amplify Params - DO NOT EDIT */
+const AWS = require('aws-sdk');
+const ffmpeg = require('fluent-ffmpeg');
 
-/**
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- */
 exports.handler = async (event) => {
-    console.log(`EVENT: ${JSON.stringify(event)}`);
-    return {
-        statusCode: 200,
-    //  Uncomment below to enable CORS requests
-    //  headers: {
-    //      "Access-Control-Allow-Origin": "*",
-    //      "Access-Control-Allow-Headers": "*"
-    //  },
-        body: JSON.stringify('Hello from Lambda!'),
-    };
+  const s3 = new AWS.S3();
+  const inputBucket = event.Records[0].s3.bucket.name;
+  const inputKey = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, ' '));
+  
+  const outputKey = `highlights/${inputKey}`;
+
+  const inputFile = s3.getObject({ Bucket: inputBucket, Key: inputKey }).createReadStream();
+  const outputFile = s3.upload({ Bucket: inputBucket, Key: outputKey }).createWriteStream();
+
+  ffmpeg(inputFile)
+    .outputOptions('-vf', 'select=eq(pict_type\\,I)')
+    .output(outputFile)
+    .on('end', () => {
+      console.log('Processing finished successfully');
+    })
+    .on('error', (err) => {
+      console.error('Error during processing', err);
+    })
+    .run();
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify('Video processed successfully'),
+  };
 };

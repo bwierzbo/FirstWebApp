@@ -16,7 +16,22 @@
         "firstwebappb5bb83ef": {}
       },
       "function": {
-        "videoProcessor": {}
+        "videoProcessor": {
+          "deploymentBucketName": "amplify-firstwebapp-dev-59d46-deployment",
+          "s3Key": "amplify-builds/videoProcessor-4a2f5a65367655365850-build.zip"
+        }
+      },
+      "api": {
+        "firstwebapp": {}
+      },
+      "storage": {
+        "firstwebapp": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d17wz0lhctjo58",
+          "type": "cicd"
+        }
       }
     }
   }

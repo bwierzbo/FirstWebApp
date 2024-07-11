@@ -61,6 +61,13 @@
       "service": "Lambda"
     }
   },
+  "hosting": {
+    "amplifyhosting": {
+      "lastPushTimeStamp": "2024-07-11T13:38:00.763Z",
+      "service": "amplifyhosting",
+      "type": "cicd"
+    }
+  },
   "storage": {
     "firstwebapp": {
       "dependsOn": [],

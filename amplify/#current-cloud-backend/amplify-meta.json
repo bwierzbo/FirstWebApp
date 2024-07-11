@@ -1,0 +1,139 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-firstwebapp-dev-59d46-authRole",
+      "UnauthRoleArn": "arn:aws:iam::508417564420:role/amplify-firstwebapp-dev-59d46-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::508417564420:role/amplify-firstwebapp-dev-59d46-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-firstwebapp-dev-59d46-deployment",
+      "UnauthRoleName": "amplify-firstwebapp-dev-59d46-unauthRole",
+      "StackName": "amplify-firstwebapp-dev-59d46",
+      "StackId": "arn:aws:cloudformation:us-east-2:508417564420:stack/amplify-firstwebapp-dev-59d46/7b217d40-3f84-11ef-a665-06273ec979cf",
+      "AmplifyAppId": "d17wz0lhctjo58"
+    }
+  },
+  "api": {
+    "firstwebapp": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        },
+        "GraphQLAPIIdOutput": "lomvere4pfh23ejspmd7k3jlp4",
+        "GraphQLAPIEndpointOutput": "https://wcotmkvaxjf27k3tm5vcxmj6he.appsync-api.us-east-2.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-jr7afj6yi5gsrcdn2c6ocsdks4"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2024-07-11T13:41:46.042Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-firstwebapp-dev-59d46-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apifirstwebapp"
+      },
+      "lastPushDirHash": "jP/YUf1wz8hWIA2C/PN9cVFIugE="
+    }
+  },
+  "auth": {
+    "firstwebappb5bb83ef": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "output": {
+        "UserPoolId": "us-east-2_ej9fad0Oc",
+        "AppClientIDWeb": "4mjhauq40i74uo997nsj99hjls",
+        "AppClientID": "169grfgidav4cdg3sl0tsips30",
+        "IdentityPoolId": "us-east-2:33534cd6-6f8a-422a-8eb8-f7bdca4621c7",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:508417564420:userpool/us-east-2_ej9fad0Oc",
+        "IdentityPoolName": "firstwebappb5bb83ef_identitypool_b5bb83ef__dev",
+        "UserPoolName": "firstwebappb5bb83ef_userpool_b5bb83ef"
+      },
+      "lastPushTimeStamp": "2024-07-11T13:41:46.042Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-firstwebapp-dev-59d46-deployment/amplify-cfn-templates/auth/firstwebappb5bb83ef-cloudformation-template.json",
+        "logicalId": "authfirstwebappb5bb83ef"
+      },
+      "lastPushDirHash": "ydldOhuxC+/UMpqZIckwHtNk0aA="
+    }
+  },
+  "function": {
+    "videoProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "firstwebapp"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::508417564420:role/firstwebappLambdaRole56947b8c-dev",
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:508417564420:function:videoProcessor-dev",
+        "Name": "videoProcessor-dev",
+        "LambdaExecutionRole": "firstwebappLambdaRole56947b8c-dev"
+      },
+      "lastPushTimeStamp": "2024-07-11T13:41:46.042Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-firstwebapp-dev-59d46-deployment/amplify-cfn-templates/function/videoProcessor-cloudformation-template.json",
+        "logicalId": "functionvideoProcessor"
+      },
+      "lastBuildTimeStamp": "2024-07-11T13:41:14.178Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-07-11T13:41:14.194Z",
+      "distZipFilename": "videoProcessor-6853774c5a3647545978-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-firstwebapp-dev-59d46-deployment",
+        "s3Key": "amplify-builds/videoProcessor-6853774c5a3647545978-build.zip"
+      },
+      "lastPushDirHash": "d6yC6iDzMj4cHqgn8z2cV3PJsvU="
+    }
+  },
+  "storage": {
+    "firstwebapp": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "output": {
+        "BucketName": "firstwebapp-storage59d46-dev",
+        "Region": "us-east-2"
+      },
+      "lastPushTimeStamp": "2024-07-11T13:41:46.042Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-firstwebapp-dev-59d46-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storagefirstwebapp"
+      },
+      "lastPushDirHash": "gzn/KsKZsuSi8aP301WamvxAmvo="
+    }
+  }
+}

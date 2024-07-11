@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "firstwebapp",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-firstwebapp-dev-59d46-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/66be357aec6f3b102edea5854e5862eca6db28d7"
+}

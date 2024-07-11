@@ -68,6 +68,40 @@
       "type": "cicd"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_videoProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "videoProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_videoProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "videoProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_appId": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_type": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    }
+  },
   "storage": {
     "firstwebapp": {
       "dependsOn": [],

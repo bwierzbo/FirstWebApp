@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-firstwebapp-dev-59d46-authRole",
+      "UnauthRoleArn": "arn:aws:iam::508417564420:role/amplify-firstwebapp-dev-59d46-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::508417564420:role/amplify-firstwebapp-dev-59d46-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-firstwebapp-dev-59d46-deployment",
+      "UnauthRoleName": "amplify-firstwebapp-dev-59d46-unauthRole",
+      "StackName": "amplify-firstwebapp-dev-59d46",
+      "StackId": "arn:aws:cloudformation:us-east-2:508417564420:stack/amplify-firstwebapp-dev-59d46/7b217d40-3f84-11ef-a665-06273ec979cf",
+      "AmplifyAppId": "d17wz0lhctjo58"
+    },
+    "categories": {
+      "auth": {
+        "firstwebappb5bb83ef": {}
+      },
+      "function": {
+        "videoProcessor": {}
+      }
+    }
+  }
+}
